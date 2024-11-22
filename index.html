@@ -1,0 +1,76 @@
+<html>
+
+<head>
+  <base href="">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Art Animation Creator for ESP32</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Pixel Art Animation Creator</h1>
+
+    <div class="toolbar">
+      <select id="gridSize">
+        <option value="8">8x8</option>
+        <option value="16">16x16</option>
+        <option value="32">32x32</option>
+      </select>
+
+      <select id="presetAnimations">
+        <option value="">Choose Preset Animation</option>
+        <option value="heart">Beating Heart</option>
+        <option value="pacman">Pacman</option>
+        <option value="snake">Snake</option>
+        <option value="rainbow">Rainbow Wave</option>
+        <option value="mario">Mario Walking</option>
+      </select>
+
+      <!-- <input type="color" id="colorPicker" class="color-picker" value="#000000"> -->
+
+      <button id="pencilTool">✏️ Pencil</button>
+      <button id="eraserTool">🧹 Eraser</button>
+      <button id="clearGrid">🗑️ Clear</button>
+      <button id="downloadAnimation">💾 Download Animation</button>
+      <button id="uploadAnimation">📤 Upload Animation</button>
+    </div>
+
+    <div class="drawing-area">
+      <div class="pixel-grid">
+        <div id="grid" class="grid"></div>
+      </div>
+
+      <div class="animation-controls">
+        <button id="addFrame">+ Add Frame</button>
+        <button id="playAnimation">▶️ Play</button>
+        <input type="range" id="speed" min="1" max="10" value="5">
+        <label for="speed">Animation Speed</label>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <h3>Animation Timeline</h3>
+      <div id="frames" class="frames"></div>
+    </div>
+
+    <div class="esp32-connection">
+      <h3>ESP32 Connection</h3>
+      <input type="text" id="esp32IP" placeholder="ESP32 IP Address">
+      <button id="connect">Connect to ESP32</button>
+      <button id="sendAnimation">Send Animation</button>
+      <div id="status" class="status disconnected">Not Connected</div>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+:root {
+  --primary: #2196f3;
+  --secondary: #ff4081;
+  --dark: #263238;
+  --light: #eceff1;
+  --success: #4caf50;
+  --error: #f44336;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  line-height: 1.6;
+  color: var(--dark);
+  background: var(--light);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.toolbar {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.drawing-area {
+  display: flex;
+  gap: 2rem;
+}
+
+.pixel-grid {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1px;
+  background: #ddd;
+  border: 1px solid #ccc;
+}
+
+.pixel {
+  width: 20px;
+  height: 20px;
+  background: black;
+  border: 1px solid #eee;
+  cursor: pointer;
+}
+
+.timeline {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.frames {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+.frame {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #ddd;
+  cursor: pointer;
+}
+
+.frame.active {
+  border-color: var(--primary);
+}
+
+.frame .delete-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: var(--error);
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.frame:hover .delete-btn {
+  opacity: 1;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+button:hover {
+  background: #1976d2;
+}
+
+.color-picker {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 2px solid #ddd;
+}
+
+.esp32-connection {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.status {
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+}
+
+.status.connected {
+  background: #e8f5e9;
+  color: var(--success);
+}
+
+.status.disconnected {
+  background: #ffebee;
+  color: var(--error);
+}
+
+#presetAnimations {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+}
+
+#presetAnimations:hover {
+  border-color: var(--primary);
+}
