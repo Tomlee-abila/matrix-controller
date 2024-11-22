@@ -54,6 +54,11 @@ class PixelEditor {
       this.initializeGrid();
     });
 
+    document.getElementById("speed").addEventListener("input", (e) => {
+      this.animationSpeed = parseInt(e.target.value, 10);
+      console.log("Animation Speed updated to:", this.animationSpeed);
+    });
+
     document
       .getElementById("presetAnimations")
       .addEventListener("change", (e) => {
